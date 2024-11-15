@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 16:18:04 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/15 17:28:24 by lillopez         ###   ########.fr       */
+/*   Created: 2024/11/15 14:54:44 by lillopez          #+#    #+#             */
+/*   Updated: 2024/11/15 15:06:19 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+
+#include <string.h>
+
+void	*memmove(void *dest, const void *src, size_t n)
 {
-	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	unsigned char	*d;
+	const unsigned char	*s1;
+	int i;
+
+	d = (unsigned char *)dest;
+	s1 = (unsigned const char *)src;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s1[i];
+		i++;
+	}
+	return (dest);
 }

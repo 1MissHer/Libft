@@ -6,11 +6,11 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:52:55 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/13 16:55:10 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:10:12 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include  "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

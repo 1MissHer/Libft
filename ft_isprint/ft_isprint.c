@@ -6,13 +6,13 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:45:42 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/13 16:52:02 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:28:51 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if ((c >= ' ' && c <= '~'))
-		return (0);
-	return (1);	
+		return (1);
+	return (0);	
 }

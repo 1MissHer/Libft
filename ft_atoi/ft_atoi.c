@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 16:18:04 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/15 17:28:24 by lillopez         ###   ########.fr       */
+/*   Created: 2024/11/15 16:51:50 by lillopez          #+#    #+#             */
+/*   Updated: 2024/11/15 17:25:38 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
 {
-	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	int	i;
+	int	result;
+	int	neg;
+
+	i = 0;
+	result = 0;
+	neg = 1;
+	while (nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			neg *= - 1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		result = result * 10 + nptr[i] - 48;
+		i++;
+	}
+	return (result * neg);
 }
