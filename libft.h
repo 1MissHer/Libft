@@ -6,7 +6,7 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:44:13 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/15 15:08:03 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:58:58 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,15 @@ int	ft_isprint(int c);
 void	*memset(void *s, int c, size_t n);
 size_t	ft_strlen(const char *str);
 void	*memmove(void *dest, const void *src, size_t n);
-
-
-
-
+int	ft_atoi(const char *nptr);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+void bzero(void *s, size_t n);
+int	toupper(int c);
+int	ft_tolower(int c);
+char *ft_strchr(const char *s, int c);
+char *strrchr(const char *s, int c);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
+void *ft_memchr(const void *s, int c, size_t n);
+int memcmp(const void *s1, const void *s2, size_t n);
 
 #endif
