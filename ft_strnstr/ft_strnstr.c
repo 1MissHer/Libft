@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 16:51:50 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/17 15:13:23 by lillopez         ###   ########.fr       */
+/*   Created: 2024/11/17 14:45:11 by lillopez          #+#    #+#             */
+/*   Updated: 2024/11/17 15:00:30 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char *ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
-	int	result;
-	int	neg;
+	int j;
 
+	j = 0;
 	i = 0;
-	result = 0;
-	neg = 1;
-	while (nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	while (big[i] && little[j] && little[j] <= len )
 	{
-		if (nptr[i] == '-')
-			neg *= - 1;
+		while (little[j] == big[i + j])
+		{
+	
+			if (!(little[j]))
+			{
+				return (&big[i]);
+			}
+			j++;
+		}
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		result *= 10 + nptr[i] - 48;
-		i++;
-	}
-	return (result * neg);
+	return (0);
 }
-

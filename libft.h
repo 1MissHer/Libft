@@ -6,7 +6,7 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:44:13 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/16 15:58:58 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/11/17 14:16:32 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void bzero(void *s, size_t n);
 int	toupper(int c);
 int	ft_tolower(int c);
 char *ft_strchr(const char *s, int c);
-char *strrchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 void *ft_memchr(const void *s, int c, size_t n);
 int memcmp(const void *s1, const void *s2, size_t n);

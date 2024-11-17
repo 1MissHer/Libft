@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 16:51:50 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/17 15:13:23 by lillopez         ###   ########.fr       */
+/*   Created: 2024/11/17 17:22:33 by lillopez          #+#    #+#             */
+/*   Updated: 2024/11/17 17:25:50 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strdup(char *str)
 {
-	int	i;
-	int	result;
-	int	neg;
+	int			i;
+	char		*s2;
 
 	i = 0;
-	result = 0;
-	neg = 1;
-	while (nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	s2 = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	while (str[i])
 	{
-		if (nptr[i] == '-')
-			neg *= - 1;
+		s2[i] = str[i];
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		result *= 10 + nptr[i] - 48;
-		i++;
-	}
-	return (result * neg);
+	s2[i] = '\0';
+	return (s2);
 }
-

@@ -6,13 +6,13 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:40:02 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/15 15:10:23 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/11/17 17:09:43 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void bzero(void *s, size_t n)
+void ft_bzero(void *s, size_t n)
 {
 	int i;
 

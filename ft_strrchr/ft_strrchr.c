@@ -6,14 +6,14 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:05:49 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/16 15:09:18 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/11/17 14:16:56 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
 
-char *strrchr(const char *s, int c)
+char *ft_strrchr(const char *s, int c)
 {
 	int i;
 
