@@ -6,7 +6,7 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:01:52 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/16 15:17:23 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:51:58 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ char *ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == 'c')
 		{
 			return (s + i);
 		}
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == 'c')
 		return (s + i);
 	return (0);
 }

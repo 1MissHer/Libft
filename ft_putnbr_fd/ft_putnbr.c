@@ -1,49 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 12:59:34 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/27 16:58:57 by lillopez         ###   ########.fr       */
+/*   Created: 2024/12/02 15:31:44 by lillopez          #+#    #+#             */
+/*   Updated: 2024/12/02 15:44:21 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-char *ft_itoa(int n)
+void ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	int		j;
-	int		n2;
-	int		size;
-	char	*str;
-
-	i = 0;
-	j = 0;
-	n2 = n;
+	fd = open(ft_putnbr_fd, n);
 	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	{
+		write(fd, "-2147483648", 11);
+		close(fd);
+	}
 	if (n < 0)
 	{
 		n *= -1;
-		str[i] = '-';
-		i++;
+		write(fd, "-", 1);
 	}
-	while (n2 > 9)
+	if (n > 9)
 	{
-		n2 /= 10;
-		j++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
-	size = i + j;
-	str = malloc(sizeof (char) * (size) + 1);
-	while (i < j)
+	if (n > 0 && n < 9)
 	{
-		str[i + j] = n % 10 + 48;
-		n /= 10;
-		j--;
+		write(fd, &n, 1);
+		return (0);
 	}
-	str[i] = '/0';
-	return (str);
+	if (n == n)
+		close (fd);
 }

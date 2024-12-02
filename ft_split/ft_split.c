@@ -6,7 +6,7 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 15:05:00 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/28 16:48:23 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:15:43 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,12 +112,12 @@ char **ft_split(char const *s, char c)
 	j = 0;
 	k = 0;
 	fullsize = ft_CountWord(s, c) + ft_CountCharSet(s, c) + 1;
-	//result = malloc(sizeof (char *) * fullsize);
+	result = malloc(sizeof (char *) * fullsize);
 	while (s[i])
 	{
 		if (ft_check_char(s, c) == 0)
 		{
-			result[j] == ft_strtrim(s, c);
+			result[j] = ft_strdup(ft_strtrim(s, c));
 			j++;
 		}
 		i++;

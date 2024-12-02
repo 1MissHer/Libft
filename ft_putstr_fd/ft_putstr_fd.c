@@ -1,49 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 12:59:34 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/27 16:58:57 by lillopez         ###   ########.fr       */
+/*   Created: 2024/12/02 15:24:01 by lillopez          #+#    #+#             */
+/*   Updated: 2024/12/02 16:55:45 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-char *ft_itoa(int n)
+void ft_putstr_fd(char *str, int fd)
 {
-	int		i;
-	int		j;
-	int		n2;
-	int		size;
-	char	*str;
+	int	i;
 
 	i = 0;
-	j = 0;
-	n2 = n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	fd = open(ft_putstr_fd, str);
+	if (fd < 0)
+		close (fd);
+	while (str[i])
 	{
-		n *= -1;
-		str[i] = '-';
+		write(fd, &str[i], 1);
 		i++;
 	}
-	while (n2 > 9)
-	{
-		n2 /= 10;
-		j++;
-	}
-	size = i + j;
-	str = malloc(sizeof (char) * (size) + 1);
-	while (i < j)
-	{
-		str[i + j] = n % 10 + 48;
-		n /= 10;
-		j--;
-	}
-	str[i] = '/0';
-	return (str);
+	close (fd);
 }

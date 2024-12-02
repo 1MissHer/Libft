@@ -1,49 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 12:59:34 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/27 16:58:57 by lillopez         ###   ########.fr       */
+/*   Created: 2024/12/02 15:46:23 by lillopez          #+#    #+#             */
+/*   Updated: 2024/12/02 16:51:20 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-char *ft_itoa(int n)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		j;
-	int		n2;
-	int		size;
 	char	*str;
+	char	s1;
+	int		i;
 
+	str = s;
+	s1 = *f;
 	i = 0;
-	j = 0;
-	n2 = n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	if (*f == 0)
 	{
-		n *= -1;
-		str[i] = '-';
-		i++;
+		return (0);
 	}
-	while (n2 > 9)
+	if (*f == s1)
 	{
-		n2 /= 10;
-		j++;
+		while (s[i])
+		{
+			str[i] = s1;
+			i++;
+		}
 	}
-	size = i + j;
-	str = malloc(sizeof (char) * (size) + 1);
-	while (i < j)
-	{
-		str[i + j] = n % 10 + 48;
-		n /= 10;
-		j--;
-	}
-	str[i] = '/0';
 	return (str);
 }

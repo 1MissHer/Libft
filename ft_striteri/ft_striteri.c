@@ -1,49 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 12:59:34 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/27 16:58:57 by lillopez         ###   ########.fr       */
+/*   Created: 2024/12/02 16:01:39 by lillopez          #+#    #+#             */
+/*   Updated: 2024/12/02 16:13:04 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-char *ft_itoa(int n)
+void ft_strteri(char *s, void (*f)(unsigned int, char *))
 {
 	int		i;
-	int		j;
-	int		n2;
-	int		size;
-	char	*str;
+	char	*s1;
 
 	i = 0;
-	j = 0;
-	n2 = n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	s1 = s;
+	while (s[i])
 	{
-		n *= -1;
-		str[i] = '-';
+		s1[i] = *f;
 		i++;
 	}
-	while (n2 > 9)
-	{
-		n2 /= 10;
-		j++;
-	}
-	size = i + j;
-	str = malloc(sizeof (char) * (size) + 1);
-	while (i < j)
-	{
-		str[i + j] = n % 10 + 48;
-		n /= 10;
-		j--;
-	}
-	str[i] = '/0';
-	return (str);
+	return (0);
 }

@@ -1,49 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 12:59:34 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/27 16:58:57 by lillopez         ###   ########.fr       */
+/*   Created: 2024/11/22 17:49:45 by lillopez          #+#    #+#             */
+/*   Updated: 2024/11/22 18:00:18 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-char *ft_itoa(int n)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		j;
-	int		n2;
-	int		size;
-	char	*str;
+	int	i;
+	int j;
+	char *str;
 
-	i = 0;
+	malloc(sizeof (char) * len);
+	i = start;
 	j = 0;
-	n2 = n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	while (i == len)
 	{
-		n *= -1;
-		str[i] = '-';
+		str[j] == s[i];
+		j++;
 		i++;
 	}
-	while (n2 > 9)
-	{
-		n2 /= 10;
-		j++;
-	}
-	size = i + j;
-	str = malloc(sizeof (char) * (size) + 1);
-	while (i < j)
-	{
-		str[i + j] = n % 10 + 48;
-		n /= 10;
-		j--;
-	}
-	str[i] = '/0';
 	return (str);
 }

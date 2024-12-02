@@ -6,7 +6,7 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:44:13 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/17 14:16:32 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:57:48 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,17 @@ char *ft_strrchr(const char *s, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 void *ft_memchr(const void *s, int c, size_t n);
 int memcmp(const void *s1, const void *s2, size_t n);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+char **ft_split(char const *s, char c);
+char *ft_itoa(int n);
+char	*ft_strdup(char *str);
+char *ft_strtrim(char const *s1, char const *set);
+void ft_putstr_fd(char *str, int fd);
+void ft_putnbr_fd(int n, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putchar_fd(char c, int fd);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_strteri(char *s, void (*f)(unsigned int, char *));
 
 #endif
