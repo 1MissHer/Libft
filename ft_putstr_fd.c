@@ -6,14 +6,13 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:24:01 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/02 18:26:19 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:44:48 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-void ft_putstr_fd(char *str, int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
 	int	i;
 

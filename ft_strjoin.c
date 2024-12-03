@@ -6,20 +6,19 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:33:17 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/02 18:32:45 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:20:45 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	int k;
-	int fullsize;
-	char *str;
+	int		i;
+	int		j;
+	int		k;
+	int		fullsize;
+	char	*str;
 
 	i = 0;
 	j = 0;

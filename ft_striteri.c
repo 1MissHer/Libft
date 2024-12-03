@@ -6,12 +6,13 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:01:39 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/02 17:22:59 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:45:00 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-void ft_strteri(char *s, void (*f)(unsigned int, char *))
+void	ft_strteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;
 

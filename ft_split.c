@@ -6,14 +6,13 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 15:05:00 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/02 18:29:58 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:39:13 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int ft_check_char(char *str, char c)
+int	ft_check_char(char *str, char c)
 {
 	int	i;
 
@@ -22,17 +21,17 @@ int ft_check_char(char *str, char c)
 	{
 		if (str[i] == c)
 		{
-			return (0);
+			return (i);
 		}
 		i++;
 	}
 	return (1);
 }
 
-int ft_count_word(char *s, char c)
+int	ft_count_word(char *s, char c)
 {
 	int	i;
-	int word;
+	int	word;
 
 	i = 0;
 	word = 0;
@@ -51,7 +50,7 @@ int ft_count_word(char *s, char c)
 	return (word);
 }
 
-int ft_count_charset(char *s, char c)
+int	ft_count_charset(char *s, char c)
 {
 	int		i;
 	int		char_set;
@@ -78,10 +77,10 @@ int ft_count_charset(char *s, char c)
 	return (char_set);
 }
 
-char *ft_strtrim(char const *s1, char c)
+char	*ft_strtrim(char const *s1, char c)
 {
-	int		i;
-	int		j;
+	int			i;
+	int			j;
 	char const	*str;
 
 	i = 0;
@@ -100,22 +99,25 @@ char *ft_strtrim(char const *s1, char c)
 	return (str);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
+	int		k;
 	int		fullsize;
 	char	**result;
 
 	i = 0;
 	j = 0;
+	k = 0;
 	fullsize = ft_count_word(s, c) + ft_count_char_set(s, c) + 1;
 	result = malloc(sizeof (char *) * fullsize);
 	while (s[i])
 	{
-		if (ft_check_char(s, c) == 0)
+		if (ft_check_char(s, c))
 		{
-			result[j] = ft_strdup();
+			k = ft_check_char(s, c);
+			result[j] = ft_strdup(ft_substr(s, i, (i + k)));
 			j++;
 		}
 		i++;

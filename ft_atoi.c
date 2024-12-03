@@ -6,7 +6,7 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:51:50 by lillopez          #+#    #+#             */
-/*   Updated: 2024/11/17 15:13:23 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:38:09 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(const char *nptr)
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
-			neg *= - 1;
+			neg *= -1;
 		i++;
 	}
 	while (ft_isdigit(nptr[i]))
@@ -36,4 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * neg);
 }
-

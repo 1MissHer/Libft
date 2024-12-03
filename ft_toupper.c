@@ -6,12 +6,9 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:45:08 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/02 18:38:13 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:32:29 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

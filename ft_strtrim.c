@@ -6,18 +6,17 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:49:03 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/02 16:33:05 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:31:38 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int ft_count_char_set(char *str, char *set)
+int	ft_count_char_set(char *str, char *set)
 {
-	int i;
-	int len;
-	int count;
+	int	i;
+	int	len;
+	int	count;
 
 	i = 0;
 	len = ft_strlen(str);
@@ -37,22 +36,20 @@ int ft_count_char_set(char *str, char *set)
 	return (i + len);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int j;
-	int k;
-	int l;
-	int m;
-	char *str;
+	int		i;
+	int		j;
+	int		k;
+	int		l;
+	char	*str;
 
 	i = 0;
 	j = 0;
 	k = 0;
 	l = ft_strlen(s1);
-	m = ft_count_char_set(s1, set);
 	str = ft_strdup(s1);
-	str = malloc(sizeof (char) * m + 1);
+	str = malloc(sizeof (char) * ft_count_char_set(s1, set) + 1);
 	str = s1;
 	while (set[j])
 	{
