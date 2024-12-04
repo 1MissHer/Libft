@@ -6,23 +6,31 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:59:34 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/03 08:42:44 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/04 19:29:16 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+
+char	*ft_int_to_char(char *str, int n, int i, int j)
+{
+	if (i < j)
+	{
+		str[i + j] = n % 10 + 48;
+		n /= 10;
+	}
+	return (str);
+}
 char	*ft_itoa(int n)
 {
 	int		i;
 	int		j;
-	int		n2;
 	int		size;
 	char	*str;
 
 	i = 0;
 	j = 0;
-	n2 = n;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n < 0)
@@ -31,19 +39,15 @@ char	*ft_itoa(int n)
 		str[i] = '-';
 		i++;
 	}
-	while (n2 > 9)
+	while (n > 9)
 	{
-		n2 /= 10;
+		n /= 10;
 		j++;
 	}
 	size = i + j;
 	str = malloc(sizeof (char) * (size) + 1);
-	while (i < j)
-	{
-		str[i + j] = n % 10 + 48;
-		n /= 10;
-		j--;
-	}
+	while (str = ft_int_to_char(str, n, i, j--))
 	str[i] = '\0';
 	return (str);
 }
+
