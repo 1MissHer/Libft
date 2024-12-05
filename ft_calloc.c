@@ -6,7 +6,7 @@
 /*   By: lillopez <lillopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:18:22 by lillopez          #+#    #+#             */
-/*   Updated: 2024/12/03 08:39:45 by lillopez         ###   ########.fr       */
+/*   Updated: 2024/12/05 08:47:07 by lillopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	ft_bzero(void *s, size_t n)
 	return ;
 }
 
-//void	*ft_calloc(size_t nmeb, size_t size)
+void	*ft_calloc(size_t nmeb, size_t size)
 {
 	size_t	len;
 
-	ft_bzero(nmeb, size);
+	ft_bzero(((char *)nmeb), size);
 	len = ft_strlen(nmeb);
 	malloc(sizeof (char) * len);
 }
